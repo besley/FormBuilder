@@ -1,0 +1,405 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/bootstrap/bootstrap-progressbar-2.3.1.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui/jquery-ui.css" rel="stylesheet" />
+
+    <link href="~/Content/slickgrid/slick.grid.css" rel="stylesheet" />
+    <link href="~/Content/slickgrid/slickgrid-bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/slickgrid/slickgrid-example.css" rel="stylesheet" />
+
+    <link href="~/Content/msgBoxLight.css" rel="stylesheet" />
+    <link href="~/Content/master.css" rel="stylesheet" />
+    <title>
+        SlickMaster 表单定制主页面
+    </title>
+    <style id="content-styles">
+        /* Styles that are also copied for Preview */
+        body {
+            margin: 10px 0 0 10px;
+        }
+
+        .control-label {
+            display: inline-block !important;
+            padding-top: 5px;
+            text-align: right;
+            vertical-align: baseline;
+            padding-right: 10px;
+        }
+
+        .droppedField {
+            padding-left: 5px;
+        }
+
+        .droppedField > input, select, button, .checkboxgroup, .selectmultiple, .radiogroup {
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .action-bar .droppedField {
+            float: left;
+            padding-left: 5px;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            background-color: #000;
+        }
+
+        .progress-bar.animate {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <a href="#" class="btn btn-info" onclick="kmaster.createEntityDef();"><i class="icon-white icon-file"></i> 新建</a>
+            <a href="/smd/entitydef/list" data-toggle="modal" data-target="#modelEntityDefListForm" role="dialog" class="btn btn-info"><i class="icon-white icon-share"></i> 打开</a>
+            <a href="#" class="btn btn-info" onclick="kmaster.showAdjustDialog();"><i class="icon-white icon-list-alt"></i> 表格</a>
+            <a href="/smd/attribute/list" data-toggle="modal" data-target="#modalEntityAttributeListDialog" role="dialog" class="btn btn-info modal-link"> <i class="icon-white icon-tasks"></i> 字段</a>
+            <a href="#" class="btn btn-info" onclick="kmaster.previewForm();"><i class="icon-white icon-search"></i> 预览</a>
+            <a href="#" class="btn btn-info" onclick="kmaster.validatedSaveTemplate();"><i class="icon-white icon-ok"></i> 保存</a>
+        </div>
+    </div>
+    <legend></legend>
+    <div class="container-fluid">
+
+        <div class="row-fluid">
+            <!-- begin of draggable control list -->
+            <div class="span2">
+                <b>输入字段</b>
+                <!-- 简单字段 -->
+                <div class="selectorField draggableField">
+                    <div class="textbox well well-mini"><b></b> 文本框</div>
+                    <div class="modele">
+                        <label class="control-label">文本框</label>
+                        <input class="ctrl-textbox" type="text" placeholder="请输入你的文字..." />
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <div class="selectorField draggableField">
+                    <div class="password well well-mini"><b></b> 密码</div>
+                    <div class='modele'>
+                        <label class="control-label">密码</label>
+                        <input class="ctrl-passwordbox" type="password" placeholder="请输入你的密码..." />
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <div class="selectorField draggableField">
+                    <div class="combobox well well-mini"><b></b> 下拉框</div>
+                    <div class='modele'>
+                        <label class="control-label">下拉框</label>
+                        <select class="ctrl-combobox">
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <div class='selectorField draggableField'>
+                    <div class="radiogroup well well-mini"><b></b> 单选按钮</div>
+                    <div class='modele'>
+                        <label class="control-label" style="vertical-align:top">单选按钮</label>
+                        <div class="ctrl-radiogroup" style="display:inline-block;">
+                            <span style="display:block;"><input type="radio" name="" value="option1" />Option 1</span>
+                            <span style="display:block;"><input type="radio" name="" value="option2" />Option 2</span>
+                            <span style="display:block;"><input type="radio" name="" value="option3" />Option 3</span>
+                        </div>
+                        <input class ="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <div class='selectorField draggableField'>
+                    <div class="checkboxgroup well well-mini"><b></b> 复选框</div>
+                    <div class='modele'>
+                        <label class="control-label" style="vertical-align:top">复选框</label>
+                        <div class="ctrl-checkboxgroup" style="display:inline-block;">
+                            <span style="display:block;"><input type="checkbox" name="checkboxField" value="option1" />Option 1</span>
+                            <span style="display:block;"><input type="checkbox" name="checkboxField" value="option2" />Option 2</span>
+                            <span style="display:block;"><input type="checkbox" name="checkboxField" value="option3" />Option 3</span>
+                        </div>
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <div class='selectorField draggableField'>
+                    <div class="selectmultiple well well-mini"><b></b> 多选列表</div>
+                    <div class='modele'>
+                        <label class="control-label" style="vertical-align:top">多选列表</label>
+                        <div style="display:inline-block;">
+                            <select class="ctrl-selectmultiplelist" multiple="multiple" style="width:150px">
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+                        </div>
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <b>日期和文本</b>
+                <div class='selectorField draggableField'>
+                    <div class="displaydate well well-mini"><b></b> 日期</div>
+                    <div class='modele date'>
+                        <label class="control-label">日期</label>
+                        <input class="ctrl-date form_datetime" size="16" type="text" value="2015-06-15 14:45" readonly>
+                        @*<span class="add-on"><i class="icon-th"></i></span>*@
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <div class='selectorField draggableField'>
+                    <div class="displaytext well well-mini"><b></b> 文本区域</div>
+                    <div class='modele'>
+                        <label class="control-label">文本</label>
+                        <textarea class="ctrl-text form-control" rows="3"></textarea>
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+
+                <b>按钮</b>
+                <div class='selectorField draggableField'>
+                    <button class="btn ctrl-btn"> 简单按钮</button>
+                    <div class="modele">
+                        <button class="btn ctrl-btn"> 简单按钮</button>
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+                <div class='selectorField draggableField'>
+                    <button class="btn btn-primary ctrl-btn"> 常用按钮</button>
+                    <div class="modele">
+                        <button class="btn btn-primary ctrl-btn"> 常用按钮</button>
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+                <div class='selectorField draggableField'>
+                    <button class="btn btn-success ctrl-btn"><i class="icon-ok-sign icon-white"></i> 保存按钮</button>
+                    <div class="modele">
+                        <button class="btn btn-success ctrl-btn"><i class="icon-ok-sign icon-white"></i> 保存按钮</button>
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+                <div class='selectorField draggableField'>
+                    <button class="btn btn-danger ctrl-btn"><i class="icon-trash icon-white"></i> 删除按钮</button>
+                    <div class="modele">
+                        <button class="btn btn-danger ctrl-btn"><i class="icon-trash icon-white"></i> 删除按钮</button>
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+            </div>
+            <!-- end of draggable control list-->
+            <!-- begin of dropped control list-->
+            <div class="span10">
+                <div class="span12" id="selected-content">
+                    <div class="row-fluid" id="form-title-div">
+                        <input type="text" class="input-large span12" placeholder="请输入表单标题..." id="txtFormTitle" onclick="kmaster.popupEntityDef();" />
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6 well droppedFields"></div>
+                        <div class="span6 well droppedFields"></div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12 well action-bar droppedFields" style="min-height:80px;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of dropped control list-->
+        </div>
+        .
+    </div>
+
+    <!-- beginning of Modal HTML Page-->
+    <div id="modelEntityDefListForm" class="modal hide eavModalDialog" style="width:600px;height:400px;">
+        <div class="modal-dialog">
+            <!-- Modal -->
+            <div class="modal-body">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modalSettingForm" class="modal hide eavModalDialog" style="width:600px;height:400px;">
+        <div class="modal-dialog">
+            <!-- Modal -->
+            <div class="modal-body">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modalEntityAttributeListDialog" class="modal hide eavModalDialog" style="width:600px;height:400px;">
+        <div class="modal-dialog">
+            <!-- Modal -->
+            <div class="modal-body" id="modalAttributeListContent">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+    <!-- end of modal html page -->
+
+    <!-- beginning of Template declaration -->
+    <script id="form-template" type="text/x-handlebars-template">
+        <div class="modal-header">
+            <h3>{{header}}</h3>
+        </div>
+        <div class="modal-body">
+            <form id="defForm" class="form-horizontal">
+                <p id="pLabel"><label class="control-label" for="handlebars-textbox-label">标题</label> <input type="text" name="label" value="{{label}}" id="handlebars-textbox-label" /></p>
+                <p><label class="control-label" for="handlebars-textbox-name">表单名称</label> <input type="text" value="{{name}}" name="name" id="handlebars-textbox-name" /></p>
+                <p><label class="control-label" for="handlebars-textbox-desc">描述</label> <input type="text" value="{{desc}}" name="desc" id="handlebars-textbox-name" /></p>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" onclick="eavManager.saveEntityDef();">保存</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+        </div>
+    </script>
+    <script id="control-customize-template" type="text/x-handlebars-template">
+        <div class="modal-header">
+            <h3>{{header}}</h3>
+        </div>
+        <div class="modal-body">
+            <form id="eavForm" class="form-horizontal">
+                <input type="hidden" value="{{type}}" name="type" />
+                <input type="hidden" value="{{forCtrl}}" name="forCtrl" />
+                <input type="hidden" value="{{format}}" name="format" />
+                <p id="pLabel"><label class="control-label" for="handlebars-textbox-title">标题</label> <input type="text" name="title" value="" id="handlebars-textbox-title" /></p>
+                <p id="tLabel"><label class="control-label" for="handlebars-combobox-datatype">数据类型</label> 
+                    <select id="handlebars-combobox-datatype" name="datatype" style="width:180px" class="ctrl-combobox">
+                        <option value="1">字符串</option>
+                        <option value="2">整数</option>
+                        <option value="3">小数</option>
+                        <option value="4">日期</option>
+                        <option value="5">大文本</option>
+                    </select>
+                </p>
+                <p id="pMandatory"><label class="control-label" for="checkbox-checkbox-mandatory">必填</label> <input type="checkbox" name="mandatory" value="" id="checkbox-checkbox-mandatory" /></p>
+                <p id="pConditionKey"><label class="control-label" for="handlebars-textbox-conditionkey">条件KEY</label><input type="text" name="conditionkey" value="" placeholder="分支条件的KEY名称(可选)..." id="handlebars-textbox-conditionkey" /></p>
+                {{{content}}}
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="fieldManager.updateAttribute();">保存</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="fieldManager.deleteField();">删除</button>
+        </div>
+    </script>
+
+    <script id="textbox-template" type="text/x-handlebars-template">
+        <p><label class="control-label">提示</label> <input type="text" name="placeholder" value="" /></p>
+    </script>
+
+    <script id="combobox-template" type="text/x-handlebars-template">
+        <p><label class="control-label">选项</label> <textarea name="options" rows="5"></textarea></p>
+    </script>
+
+    <script id="text-template" type="text/x-handlebars-template">
+        <p></p>
+    </script>
+
+    <script id="date-template" type="text/x-handlebars-template">
+        <p>
+            <label class="control-label" for="handlebars-textbox-formatdate" style="padding-top:16px;">格式</label>
+            <select name="dateformat" id="handlebars-textbox-formatdate">
+                <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                <option value="YYYY/MM/DD hh:mm:ss">YYYY/MM/DD hh:mm:ss</option>
+            </select>
+        </p>
+    </script>
+    <!-- end of Template declaration-->
+    <!-- the beginning of Adjust columns dialog-->
+    <div id="dialog-form-number-column" class="modal hide" style="display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">x</a>
+            <h3>添加新表格</h3>
+        </div>
+        <div class="modal-body" style="padding:10px 40px 0 40px; min-height:150px;">
+            <form>
+                <label for="numberColumn">列数: <span id="numberColumn">1</span></label>
+                <div id="sliderNumberColumn"></div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-success" onclick="tableManager.appendTable();">插入</a>
+            <a href="#" class="btn" data-dismiss="modal">关闭</a>
+        </div>
+    </div>
+    <!-- end of Adjust columns dialog-->
+
+    <span style="position:absolute; padding-right: 6px; height: 10px; display:none;" id="divDeleteTable">
+        <a href="#" onclick="kmaster.deleteTable();"><img src="~/Content/images/delete.png" alt="" /></a>
+    </span>
+
+    <!--Progress Bar-->
+    <div class="modal js-loading-bar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="progress">
+                        <div class="bar" data-transitiongoal="75"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-ui-1.10.3.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.event.drag-2.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.msgBox.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootbox.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-progressbar.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="~/Scripts/handlebars.js"></script>
+    <script type="text/javascript" src="~/Scripts/jshelper.js"></script>
+
+    <!-- slickgrid -->
+    <script src="~/Scripts/slickgrid/slickgrid.min.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kcommon.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kmaster.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            kmaster.docReady();
+
+            $('.eavModalDialog',' body').on('hidden', function () {
+                $(this).removeData('modal');
+                $('.modal-body', this).empty();
+            })
+        })
+    </script>
+
+</body>
+</html>
+
+
+

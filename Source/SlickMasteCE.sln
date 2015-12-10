@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlickMaster.Builder", "SlickMaster.Builder\SlickMaster.Builder.csproj", "{20651E69-A5C8-411B-BC27-6FB49C122491}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Designer", "Designer", "{C1620DCF-C982-4469-A3DB-FD3A34837876}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{10C05D64-FB6E-40AA-BEA4-B82AD8CCD648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlickMaster.Designer", "SlickMaster.Designer\SlickMaster.Designer.csproj", "{FE695041-A0E1-43C4-8269-96F38EB3AF83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20651E69-A5C8-411B-BC27-6FB49C122491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20651E69-A5C8-411B-BC27-6FB49C122491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20651E69-A5C8-411B-BC27-6FB49C122491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20651E69-A5C8-411B-BC27-6FB49C122491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE695041-A0E1-43C4-8269-96F38EB3AF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE695041-A0E1-43C4-8269-96F38EB3AF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE695041-A0E1-43C4-8269-96F38EB3AF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE695041-A0E1-43C4-8269-96F38EB3AF83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20651E69-A5C8-411B-BC27-6FB49C122491} = {10C05D64-FB6E-40AA-BEA4-B82AD8CCD648}
+		{FE695041-A0E1-43C4-8269-96F38EB3AF83} = {C1620DCF-C982-4469-A3DB-FD3A34837876}
+	EndGlobalSection
+EndGlobal

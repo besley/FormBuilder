@@ -14,9 +14,11 @@ namespace SlickMaster.Designer.Controllers.Mvc
         {
             var eavModel = new EavModel();
             var entity = eavModel.GetEntityDef(id);
-            ViewBag.Title = entity.EntityTitle;
-            ViewBag.HtmlStr = entity.HTMLContent;
-
+            if (entity != null)
+            {
+                ViewBag.Title = entity.EntityTitle;
+                ViewBag.HtmlStr = entity.HTMLContent;
+            }
             return View();
         }
     }

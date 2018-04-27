@@ -6,10 +6,15 @@
 <head>
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/bootstrap/bootstrap-dialog.min.css" rel="stylesheet" media="screen" />
     <link href="~/Content/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="~/Content/jquery-ui/jquery-ui.css" rel="stylesheet" />
     <link href="~/Content/msgBoxLight.css" rel="stylesheet" />
     <link href="~/Content/master.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/ag-grid/ag-grid.css" />
+    <link rel="stylesheet" href="~/Content/ag-grid/theme-bootstrap.css" />
+
     <title>@ViewBag.Title</title>
     <style id="content-styles">
         /* Styles that are also copied for Preview */
@@ -74,18 +79,21 @@
     <script type="text/javascript" src="~/Scripts/jquery/jquery.event.drag-2.2.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery/jquery.msgBox.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-dialog.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootbox.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
     <script type="text/javascript" src="~/Scripts/handlebars.js"></script>
     <script type="text/javascript" src="~/Scripts/jshelper.js"></script>
 
-    <script type="text/javascript" src="~/ViewJS/kcommon.js"></script>
-    <script type="text/javascript" src="~/ViewJS/kmaster.js"></script>
+    <!-- ag-grid-->
+    <script type="text/javascript" src="~/Scripts/ag-grid/ag-grid.min.js"></script>
 
+    <script type="text/javascript" src="~/ViewJS/kcommon.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kmaster.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $(".form_datetime").datetimepicker({ format: 'yyyy-mm-dd hh:ii' });
+            kcommon.initializeControls();
         })
     </script>
 </body>

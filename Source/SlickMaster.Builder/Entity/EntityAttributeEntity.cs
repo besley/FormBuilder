@@ -21,8 +21,9 @@ namespace SlickMaster.Builder.Entity
         public short AttrDataType { get; set; }
         public short FieldInputType { get; set; }
         public string ConditionKey { get; set; }
-
+        public int RefEntityDefID { get; set; }
         public string Format { get; set; }
+        public string CommandText { get; set; }
         public byte IsMandatory { get; set; }
         public int OrderID { get; set; }
         public string Description { get; set; }

@@ -9,7 +9,7 @@ using DapperExtensions;
 using SlickOne.Data;
 using SlickMaster.Builder.Entity;
 using SlickMaster.Builder.Manager;
-using SlickMaster.Toolkit;
+using SlickMaster.Builder.Utility;
 using Slickflow.Engine.Common;
 
 namespace SlickMaster.Builder.Service
@@ -57,7 +57,8 @@ namespace SlickMaster.Builder.Service
                             Description, 
                             CreatedDate, 
                             LastUpdatedDate 
-                        FROM EavEntityDef";
+                        FROM EavEntityDef
+                        ORDER BY ID DESC";
             var list = QuickRepository.Query<EntityDefEntity>(sql, null)
                         .ToList();
             return list;
@@ -70,8 +71,7 @@ namespace SlickMaster.Builder.Service
         /// <returns></returns>
         public List<EntityDefView> GetEntityDefViewList()
         {
-            var sql = @"SELECT TOP 10 
-                            ED.ID, 
+            var sql = @"SELECT ED.ID, 
                             ED.EntityTitle, 
                             ED.EntityName, 
                             ED.EntityCode, 
@@ -239,7 +239,74 @@ namespace SlickMaster.Builder.Service
         }
         #endregion
 
+        #region 表单绑定流程
+
+        /// <summary>
+        /// 获取表单绑定流程信息
+        /// </summary>
+        /// <param name="entityDefID"></param>
+        /// <returns></returns>
+        public EntityProcessEntity GetEntityProcess(int entityDefID)
+        {
+            EntityProcessEntity entity = null;
+            var sql = @"SELECT *
+                        FROM EavEntityProcess ED
+                        WHERE EntityDefID=@entityDefID";
+            var list = QuickRepository.Query<EntityProcessEntity>(sql, new
+            {
+                entityDefID = entityDefID
+            }).ToList();
+
+            if (list != null && list.Count() == 1)
+            {
+                entity = list[0];
+            }
+            return entity;
+        }
+
+        /// <summary>
+        /// 保存绑定流程信息
+        /// </summary>
+        /// <param name="entity"></param>
+        public void SaveEntityProcess(EntityProcessEntity entity)
+        {
+            var entityDefID = entity.EntityDefID;
+            var sql = @"DELETE 
+                        FROM EavEntityProcess
+                        WHERE EntityDefID=@entityDefID";
+            var session = SessionFactory.CreateSession();
+            try
+            {
+                session.BeginTrans();
+                QuickRepository.Execute(session.Connection, sql, new { entityDefID = entityDefID }, session.Transaction);
+                QuickRepository.Insert<EntityProcessEntity>(session.Connection, entity, session.Transaction);
+                session.Commit();
+
+            }
+            catch (System.Exception ex)
+            {
+                session.Rollback();
+                throw;
+            }
+            finally
+            {
+                session.Dispose();
+            }
+        }
+        #endregion
+
         #region 实体属性定义
+        /// <summary>
+        /// 获取属性实体
+        /// </summary>
+        /// <param name="attrID">属性id</param>
+        /// <returns>属性实体</returns>
+        public EntityAttributeEntity GetEntityAttribute(int attrID)
+        {
+            var entity = QuickRepository.GetById<EntityAttributeEntity>(attrID);
+            return entity;
+
+        }
         /// <summary>
         /// 获取属性列表
         /// </summary>
@@ -252,6 +319,22 @@ namespace SlickMaster.Builder.Service
                         ORDER BY DivCtrlKey";
             var list = QuickRepository.Query<EntityAttributeEntity>(sql, new { entityDefID = entityDefID })
                         .ToList() ;
+            return list;
+        }
+
+        /// <summary>
+        /// 获取数值录入字段列表
+        /// </summary>
+        /// <param name="entityDefID">实体定义ID</param>
+        /// <returns>属性列表</returns>
+        public List<EntityAttributeEntity> GetEntityAttributeListOnlyInfoValue(int entityDefID)
+        {
+            var sql = @"SELECT * FROM EavEntityAttribute
+                        WHERE EntityDefID=@entityDefID
+                            AND StorageType = 1
+                        ORDER BY DivCtrlKey";
+            var list = QuickRepository.Query<EntityAttributeEntity>(sql, new { entityDefID = entityDefID })
+                        .ToList();
             return list;
         }
 
@@ -289,6 +372,7 @@ namespace SlickMaster.Builder.Service
                     //删除字段
                     var eam = new EntityAttributeManager();
                     eam.DeleteAttribute(session.Connection, view.EntityAttributeList, session.Transaction);
+
 
                     //更新模板内容
                     var edm = new EntityDefManager();

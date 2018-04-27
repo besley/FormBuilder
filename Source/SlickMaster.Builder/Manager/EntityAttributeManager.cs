@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using SlickOne.Data;
 using SlickMaster.Builder.Entity;
-using SlickMaster.Toolkit;
+using SlickMaster.Builder.Utility;
 
 namespace SlickMaster.Builder.Manager
 {

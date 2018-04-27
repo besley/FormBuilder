@@ -29,7 +29,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 // users may change this variable to fit their needs
-var msgBoxImagePath = "/smd/content/jquery-ui/images/";
+var getAppName = function () {
+    if (window.location.pathname.split('/').length > 1)
+        return "/" + location.pathname.split('/')[1];
+    else
+        return "/";
+}
+
+var msgBoxImagePath = getAppName() + "/content/jquery-ui/images/";
 
 jQuery.msgBox = msg;
 function msg (options) {

@@ -12,6 +12,11 @@ namespace SlickMaster.Builder.Common
     public enum AttrDataTypeEnum
     {
         /// <summary>
+        /// 非数据类型
+        /// </summary>
+        NONE = 0,
+
+        /// <summary>
         /// 字符串
         /// </summary>
         VARCHAR = 1,

@@ -22,11 +22,18 @@ namespace SlickMaster.Builder.Service
         List<EntityDefEntity> GetEntityDefList2();
         List<EntityDefView> GetEntityDefViewList();
 
+        //表单绑定流程
+        EntityProcessEntity GetEntityProcess(int entityDefID);
+        void SaveEntityProcess(EntityProcessEntity entity);
+
         //字段
         List<EntityAttributeEntity> GetEntityAttributeList(int entityDefID);
+        List<EntityAttributeEntity> GetEntityAttributeListOnlyInfoValue(int entityDefID);
+        EntityAttributeEntity GetEntityAttribute(int attrID);
         EntityAttributeEntity SaveAttribute(EntityAttributeEntity entity);
         EntityAttributeEntity SaveAttributeWithTemplate(EntityAttributeView view);
         bool DeleteAttributeWithTemplate(EntityAttributeListView view);
+
 
         //表单组合字段
         EntityAttributeListView GetEntityAttributeComp(int entityDefID);

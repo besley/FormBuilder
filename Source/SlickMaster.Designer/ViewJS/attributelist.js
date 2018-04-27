@@ -9,7 +9,7 @@
             return;
         }
 
-        jshelper.ajaxGet("/smd/api/eavdata/GetEntityAttributeList/" + kmaster.mcurrentEntityDefID, null, function (result) {
+        jshelper.ajaxGet("api/eavdata/GetEntityAttributeList/" + kmaster.mcurrentEntityDefID, null, function (result) {
             if (result.Status == 1) {
                 var columnAttr = [
                     { id: "ID", name: "ID", field: "ID", width: 40, cssClass: "bg-gray" },

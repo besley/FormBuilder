@@ -8,6 +8,7 @@ using SlickOne.Data;
 using SlickOne.WebUtility;
 using SlickMaster.Builder.Entity;
 using SlickMaster.Builder.Service;
+using SlickMaster.Designer.Models;
 
 namespace SlickMaster.Designer.Controllers.WebApi
 {
@@ -165,6 +166,29 @@ namespace SlickMaster.Designer.Controllers.WebApi
 
         #region 实体属性操作
         /// <summary>
+        /// 读取字段属性
+        /// </summary>
+        /// <param name="id">字段ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ResponseResult<EntityAttributeEntity> GetAttributeEntity(int id)
+        {
+            var result = ResponseResult<EntityAttributeEntity>.Default();
+            try
+            {
+                var entity = FBMasterService.GetEntityAttribute(id);
+                result = ResponseResult<EntityAttributeEntity>.Success(entity);
+            }
+            catch (System.Exception ex)
+            {
+                result = ResponseResult<EntityAttributeEntity>.Error(
+                    string.Format("读取表单字段发生错误：{0}", ex.Message)
+                );
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 获取属性字段列表
         /// </summary>
         /// <param name="id">实体定义ID</param>
@@ -272,7 +296,35 @@ namespace SlickMaster.Designer.Controllers.WebApi
             catch (System.Exception ex)
             {
                 result = ResponseResult.Error(
-                    string.Format("保存字段和表单模板内容失败， 错误:{0}", ex.Message)
+                    string.Format("删除字段更新表单模板内容失败， 错误:{0}", ex.Message)
+                );
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取流程记录列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ResponseResult<AttrEntityView> GetAttributeEntityView(int id)
+        {
+            var result = ResponseResult<AttrEntityView>.Default();
+            try
+            {
+                var view = new AttrEntityView();
+                var attrEntity = FBMasterService.GetEntityAttribute(id);
+                view.AttributeEntity = attrEntity;
+
+                var list = FBMasterService.GetEntityDefList2();
+                view.EntityDefList = list;
+
+                result = ResponseResult<AttrEntityView>.Success(view);
+            }
+            catch (System.Exception ex)
+            {
+                result = ResponseResult<AttrEntityView>.Error(
+                    string.Format("获取数据控件绑定数据源信息失败！{0}", ex.Message)
                 );
             }
             return result;

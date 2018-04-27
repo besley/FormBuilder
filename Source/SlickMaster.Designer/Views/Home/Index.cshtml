@@ -7,9 +7,13 @@
 <head>
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/bootstrap/bootstrap-dialog.min.css"  rel="stylesheet" />
     <link href="~/Content/bootstrap/bootstrap-progressbar-2.3.1.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="~/Content/jquery-ui/jquery-ui.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/ag-grid/ag-grid.css" />
+    <link rel="stylesheet" href="~/Content/ag-grid/theme-bootstrap.css" />
 
     <link href="~/Content/slickgrid/slick.grid.css" rel="stylesheet" />
     <link href="~/Content/slickgrid/slickgrid-bootstrap.css" rel="stylesheet" />
@@ -38,11 +42,11 @@
             padding-left: 5px;
         }
 
-        .droppedField > input, select, button, .checkboxgroup, .selectmultiple, .radiogroup {
-            margin-top: 10px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
+            .droppedField > input, select, button, .checkboxgroup, .selectmultiple, .agtable, .radiogroup {
+                margin-top: 10px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
 
         .action-bar .droppedField {
             float: left;
@@ -68,11 +72,12 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <a href="#" class="btn btn-info" onclick="kmaster.createEntityDef();"><i class="icon-white icon-file"></i> 新建</a>
-            <a href="/smd/entitydef/list" data-toggle="modal" data-target="#modelEntityDefListForm" role="dialog" class="btn btn-info"><i class="icon-white icon-share"></i> 打开</a>
+            <a href="~/entitydef/list" data-toggle="modal" data-target="#modelEntityDefListForm" role="dialog" class="btn btn-info"><i class="icon-white icon-share"></i> 打开</a>
             <a href="#" class="btn btn-info" onclick="kmaster.showAdjustDialog();"><i class="icon-white icon-list-alt"></i> 表格</a>
-            <a href="/smd/attribute/list" data-toggle="modal" data-target="#modalEntityAttributeListDialog" role="dialog" class="btn btn-info modal-link"> <i class="icon-white icon-tasks"></i> 字段</a>
-            <a href="#" class="btn btn-info" onclick="kmaster.previewForm();"><i class="icon-white icon-search"></i> 预览</a>
+            <a href="~/attribute/list" data-toggle="modal" data-target="#modalEntityAttributeListDialog" role="dialog" class="btn btn-info modal-link"> <i class="icon-white icon-tasks"></i> 字段</a>
             <a href="#" class="btn btn-info" onclick="kmaster.validatedSaveTemplate();"><i class="icon-white icon-ok"></i> 保存</a>
+            <a href="#" class="btn btn-info" onclick="kmaster.previewForm();"><i class="icon-white icon-search"></i> 预览</a>
+            <a href="~/setting/index" data-toggle="modal" data-target="#modalSettingForm" role="dialog" class="btn btn-info"><i class="icon-white icon-th"></i> 设置</a>
         </div>
     </div>
     <legend></legend>
@@ -126,7 +131,7 @@
                             <span style="display:block;"><input type="radio" name="" value="option2" />Option 2</span>
                             <span style="display:block;"><input type="radio" name="" value="option3" />Option 3</span>
                         </div>
-                        <input class ="hiddenMandatory" type="hidden" />
+                        <input class="hiddenMandatory" type="hidden" />
                         <input class="hiddenAttributeEntity" type="hidden" />
                     </div>
                 </div>
@@ -167,7 +172,6 @@
                     <div class='modele date'>
                         <label class="control-label">日期</label>
                         <input class="ctrl-date form_datetime" size="16" type="text" value="2015-06-15 14:45" readonly>
-                        @*<span class="add-on"><i class="icon-th"></i></span>*@
                         <input class="hiddenMandatory" type="hidden" />
                         <input class="hiddenAttributeEntity" type="hidden" />
                     </div>
@@ -183,6 +187,17 @@
                     </div>
                 </div>
 
+                <b>数据表格</b>
+                <div class='selectorField draggableField'>
+                    <div class="agtable well well-mini"><b></b> 数据表格</div>
+                    <div class='modele'>
+                        <label class="control-label" style="vertical-align:top">数据表格</label>
+                        <div class="ag-bootstrap ctrl-datatable" style="width:100%;height:100px;"></div>
+                        <input class="hiddenMandatory" type="hidden" />
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
+               
                 <b>按钮</b>
                 <div class='selectorField draggableField'>
                     <button class="btn ctrl-btn"> 简单按钮</button>
@@ -212,6 +227,13 @@
                         <input class="hiddenAttributeEntity" type="hidden" />
                     </div>
                 </div>
+                <div class='selectorField draggableField'>
+                    <button class="btn btn-info ctrl-btn"><i class="icon-file icon-white"></i> 文件上传</button>
+                    <div class="modele">
+                        <button class="btn btn-info ctrl-btn ctrl-btn-fileupload"><i class="icon-file icon-white"></i> 文件上传</button>
+                        <input class="hiddenAttributeEntity" type="hidden" />
+                    </div>
+                </div>
             </div>
             <!-- end of draggable control list-->
             <!-- begin of dropped control list-->
@@ -233,6 +255,10 @@
         </div>
         .
     </div>
+
+    @*<div class="tabbable">
+
+        </div>*@
 
     <!-- beginning of Modal HTML Page-->
     <div id="modelEntityDefListForm" class="modal hide eavModalDialog" style="width:600px;height:400px;">
@@ -290,7 +316,8 @@
                 <input type="hidden" value="{{forCtrl}}" name="forCtrl" />
                 <input type="hidden" value="{{format}}" name="format" />
                 <p id="pLabel"><label class="control-label" for="handlebars-textbox-title">标题</label> <input type="text" name="title" value="" id="handlebars-textbox-title" /></p>
-                <p id="tLabel"><label class="control-label" for="handlebars-combobox-datatype">数据类型</label> 
+                <p id="tLabel">
+                    <label class="control-label" for="handlebars-combobox-datatype">数据类型</label>
                     <select id="handlebars-combobox-datatype" name="datatype" style="width:180px" class="ctrl-combobox">
                         <option value="1">字符串</option>
                         <option value="2">整数</option>
@@ -301,6 +328,7 @@
                 </p>
                 <p id="pMandatory"><label class="control-label" for="checkbox-checkbox-mandatory">必填</label> <input type="checkbox" name="mandatory" value="" id="checkbox-checkbox-mandatory" /></p>
                 <p id="pConditionKey"><label class="control-label" for="handlebars-textbox-conditionkey">条件KEY</label><input type="text" name="conditionkey" value="" placeholder="分支条件的KEY名称(可选)..." id="handlebars-textbox-conditionkey" /></p>
+                <p id="pCommandText"><label class="control-label" for="handlebars-textbox-commandtext">脚本命令</label><textarea rows="3" name="commandtext" value="" placeholder="请输入脚本命令文本..." id="handlebars-textarea-commandtext"></textarea>  </p>
                 {{{content}}}
             </form>
         </div>
@@ -375,6 +403,7 @@
     <script type="text/javascript" src="~/Scripts/jquery/jquery.event.drag-2.2.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery/jquery.msgBox.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-dialog.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootbox.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-progressbar.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datetimepicker.min.js"></script>
@@ -382,24 +411,25 @@
     <script type="text/javascript" src="~/Scripts/handlebars.js"></script>
     <script type="text/javascript" src="~/Scripts/jshelper.js"></script>
 
+    <!-- ag-grid-->
+    <script type="text/javascript" src="~/Scripts/ag-grid/ag-grid.min.js"></script>
+
     <!-- slickgrid -->
     <script src="~/Scripts/slickgrid/slickgrid.min.js"></script>
-    <script type="text/javascript" src="~/ViewJS/kcommon.js"></script>
-    <script type="text/javascript" src="~/ViewJS/kmaster.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kmaster.min.js"></script>
 
     <script type="text/javascript">
         $(function () {
             kmaster.docReady();
 
-            $('.eavModalDialog',' body').on('hidden', function () {
+            $('.eavModalDialog', ' body').on('hidden', function () {
                 $(this).removeData('modal');
                 $('.modal-body', this).empty();
             })
+
+            window.onbeforeunload = function () { return "您输入的数据可能不会被保存!"; };
         })
     </script>
 
 </body>
 </html>
-
-
-

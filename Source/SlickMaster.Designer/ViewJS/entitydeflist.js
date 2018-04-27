@@ -6,7 +6,9 @@
     }
 
     entitydeflist.load = function () {
-        jshelper.ajaxGet("/smd/api/eavdata/GetEntityDefList2", null, function (result) {
+    	$('#loading-indicator').show();
+
+        jshelper.ajaxGet("api/eavdata/GetEntityDefList2", null, function (result) {
             if (result.Status == 1) {
                 var columnEntityDef = [
                     { id: "ID", name: "ID", field: "ID", width: 40, cssClass: "bg-gray" },
@@ -55,6 +57,8 @@
                         entitydeflist.mselectedEntityDefRow = row;
                     }
                 });
+
+                $('#loading-indicator').hide();
             } else {
                 $.msgBox({
                     title: "Master / Entity",
@@ -77,7 +81,7 @@
 
         $("#modelEntityDefListForm").modal("hide");
         //load entitydef and attribute list
-        jshelper.ajaxGet("/smd/api/eavdata/GetEntityDefByID/" + kmaster.mcurrentEntityDefID, null,
+        jshelper.ajaxGet("api/eavdata/GetEntityDefByID/" + kmaster.mcurrentEntityDefID, null,
             function (result) {
                 if (result.Status == 1) {
                     var entityDef = result.Entity;
@@ -117,7 +121,7 @@
             buttons: [{ value: "Yes" }, { value: "Cancel" }],
             success: function (result) {
                 if (result == "Yes") {
-                    jshelper.ajaxGet("/smd/api/eavdata/DeleteEntityDef/" + entitydeflist.mselectedEntityDefID,
+                    jshelper.ajaxGet("api/eavdata/DeleteEntityDef/" + entitydeflist.mselectedEntityDefID,
                         null, function (result) {
                         if (result.Status == 1) {
                             $.msgBox({
@@ -142,5 +146,113 @@
         });
     }
 
+    entitydeflist.loadEntityDefList = function () {
+        //判断当前表单ID是否有效
+        if (kmaster.mcurrentAttributeID == "") {
+            $.msgBox({
+                title: "Designer / Field",
+                content: "请先选定数据控件，然后再绑定数据源！",
+                type: "alert"
+            });
+            $("#modalEntityBindingForm").modal("hide");
+            return false;
+        }
+
+        var ctrlId = kmaster.mcurrentControlID;
+        var divCtrl = $("#" + ctrlId);
+        var attrEntity = fieldPopup.getHiddenAttribute(divCtrl);
+
+        if (attrEntity) {
+            kmaster.mcurrentAttributeID = attrEntity.ID;
+        } else {
+            kmaster.mcurrentAttributeID = 0;
+        }
+
+        jshelper.ajaxGet("api/eavdata/GetAttributeEntityView/" + kmaster.mcurrentAttributeID, null,
+            function (result) {
+                if (result.Status == 1) {
+                    var entityDefList = result.Entity.EntityDefList;
+                    attrEntity = result.Entity.AttributeEntity;
+
+                    $.each(entityDefList, function (i, def) {
+                        $('#ddlEntityDef').append($('<option>', {
+                            value: def.ID,
+                            text: def.EntityName
+                        }));
+                    });
+
+                    if (attrEntity) {
+                        $('#ddlEntityDef').val(attrEntity.RefEntityDefID);
+                    }
+                } else {
+                    $.msgBox({
+                        title: "Designer / Field",
+                        content: "数据控件的数据源失败！错误信息：" + result.Message,
+                        type: "error"
+                    });
+                }
+            })
+    }
+
+    entitydeflist.saveEntityBinding = function () {
+        var selEntityDefID = $.trim($("#ddlEntityDef").val());
+
+        if (selEntityDefID !== ""
+            && selEntityDefID !== entitydeflist.mcurrentRefEntityDefID) {
+            jshelper.ajaxGet("api/eavdata/GetAttributeEntity/" + kmaster.mcurrentAttributeID, null,
+                function (r1) {
+                    if (r1.Status == 1) {
+                        var attrEntity = r1.Entity;
+                        if (attrEntity === undefined || attrEntity === null) {
+                            attrEntity = {};
+                            attrEntity.EntityDefID = kmaster.mcurrentEntityDefID;
+                            attrEntity.DivCtrlKey = kmaster.mcurrentControlID;
+                            attrEntity.AttrName = "DataTable";
+
+                            attrEntity.AttrDataType = 0;    //none data type
+                            attrEntity.FieldInputType = 9; //data table
+                            attrEntity.StorageType = 0;   //page control
+                        }
+                        attrEntity.RefEntityDefID = selEntityDefID;     //binding entity
+                        jshelper.ajaxPost("api/eavdata/SaveAttribute", JSON.stringify(attrEntity),
+                            function (result) {
+                                if (result.Status === 1) {
+                                    kmaster.mcurrentAttributeID = result.Entity.ID;
+                                    kmaster.mcurrentRefEntityDefID = selEntityDefID;
+                                    var divCtrl = $("#" + kmaster.mcurrentControlID);
+
+                                    divCtrl.find(".hiddenAttributeEntity").attr("value", JSON.stringify(result.Entity));
+                                    //refresh data table header columns
+                                    var gridCtrl = divCtrl.find(".ctrl-datatable")[0];
+                                    kbuilder.initEntityInfoAttrValueTable(gridCtrl, selEntityDefID);
+                                    $.msgBox({
+                                        title: "Designer / Attribute",
+                                        content: "数据控件绑定信息已经保存！",
+                                        type: "info"
+                                    });
+                                } else {
+                                    $.msgBox({
+                                        title: "Designer / Attribute",
+                                        content: "数据控件绑定失败！错误信息：" + result.Message,
+                                        type: "error"
+                                    });
+                                }
+                            });
+                    } else {
+                        $.msgBox({
+                            title: "Designer / Field",
+                            content: "字段属性读取失败！错误信息：" + r1.Message,
+                            type: "error"
+                        });
+                    }
+                })
+        } else {
+            $.msgBox({
+                title: "Designer / Field",
+                content: "请选择实体列表!",
+                type: "error"
+            });
+        }
+    }
     return entitydeflist;
 })();

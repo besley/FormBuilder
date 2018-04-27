@@ -56,6 +56,11 @@ namespace SlickMaster.Builder.Common
         Text = 8,
 
         /// <summary>
+        /// 数据表格
+        /// </summary>
+        DataTable = 15,
+
+        /// <summary>
         /// 按钮控件
         /// </summary>
         Button = 16,

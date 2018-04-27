@@ -477,6 +477,13 @@ if (!jshelper) jshelper = {};
                    .replace('&gt;', '>', 'gm');
         return data;
     }
+
+    jshelper.getAppName = function() {
+        if (window.location.pathname.split('/').length > 1)
+            return "/" + location.pathname.split('/')[1];
+        else
+            return "/";
+    }
 })()
 
 var Sys;

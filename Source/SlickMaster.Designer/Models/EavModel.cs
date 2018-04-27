@@ -23,5 +23,7 @@ namespace SlickMaster.Designer.Models
             var masterService = new FBMasterService();
             return masterService.GetEntityDef(id);
         }
+
+        
     }
 }

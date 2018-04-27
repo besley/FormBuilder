@@ -13,5 +13,10 @@ namespace SlickMaster.Designer.Controllers.Mvc
         {
             return View();
         }
+
+        public ActionResult Binding()
+        {
+            return View();
+        }
     }
 }

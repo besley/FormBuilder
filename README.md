@@ -23,11 +23,8 @@ QQ(Author): 47743901
 
 在线DEMO:
 
-http://demo.slickflow.com/smd/
+http://demo.slickflow.com/smd2/
 
-动态表单流程审批DEMO:
-
-http://demo.slickflow.com/smweb/
 
 捐赠方式：
 

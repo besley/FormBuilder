@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-3.3.7.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-theme-3.3.7.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-dialog.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-progressbar-3.3.4.min.css" />
+
+    <link rel="stylesheet" href="~/Content/ag-grid/ag-grid.css" />
+    <link rel="stylesheet" href="~/Content/ag-grid/theme-bootstrap.css" />
+
+    <link href="~/Content/msgBoxLight.css" rel="stylesheet" />
+    <link href="~/Content/master.css" rel="stylesheet" />
+
+    <title>FormMaster Process</title>
+    <style id="content-styles">
+        /* Styles that are also copied for Preview */
+        body {
+            margin: 10px 0 0 10px;
+        }
+
+        .control-label {
+            display: inline-block !important;
+            text-align: right;
+            vertical-align: baseline;
+            padding-right: 10px;
+        }
+
+        .selected {
+            font-weight: bold;
+            background: #ff6a00;
+            color: #0094ff;
+        }
+
+        .tblBorder {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .tblTop {
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="row tblTop">
+                    <span class="lang" as="formbindingprocess"></span>
+                </div>
+                <div class="row tblTop">
+                    <div class="row" style="display:block;">
+                        <select class="form-control" id="ddlProcesses" style="width:160px;display:inline-block;">
+                            <option class="lang" as="processlist" value="0"></option>
+                        </select>
+                        <a href="#" class="btn btn-info" onclick="setting.bindProcess();"><span class="glyphicon glyphicon-ok lang" as="bindbutton"></span></a>
+                        <a href="#" class="btn btn-warning" onclick="setting.unbindProcess();"><span class="glyphicon glyphicon-log-out lang" as="unbindbutton"></span></a>
+                    </div>
+                    <div class="row tblTop">
+                        <div id="myTaskActivityGrid" class="ag-bootstrap" style="width:360px;height:700px;float:left;"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="row tblBorder">
+                        <span class="lang" as="fieldpermissionlist"></span>
+                    </div>
+                    <div class="row tblBorder">
+                        <a href="#" class="btn btn-success" onclick="setting.saveAttribute();"><span class="glyphicon glyphicon-ok lang" as="savepermission"></span></a>
+                        <a href="#" class="btn btn-warning" onclick="window.close();"><span class="glyphicon glyphicon-share lang" as="return"></span></a>
+                    </div>
+                    <div class="row tblBorder" style="margin-left:10px;">
+                        <div id="myAttrActivityEditGrid" class="ag-bootstrap" style="width:600px;height:400px;float:left;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="~/Scripts/jquery/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery/jquery-ui-1.10.3.min.js"></script>
+
+        <script type="text/javascript" src="~/Scripts/jquery/jquery.event.drag-2.2.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery/jquery.msgBox.js"></script>
+        <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/bootstrap/bootbox.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/handlebars.js"></script>
+        <script type="text/javascript" src="~/Scripts/jshelper.js"></script>
+        <script type="text/javascript" src="~/Scripts/localhelper.js"></script>
+        <script type="text/javascript" src="~/ViewJS/kmsgbox.js"></script>
+
+        <!-- ag-grid-->
+        <script type="text/javascript" src="~/Scripts/ag-grid/ag-grid.min.js"></script>
+        <script type="text/javascript" src="~/ViewJS/kmaster.js"></script>
+        <script type="text/javascript" src="~/ViewJS/kresource.js"></script>
+        <script type="text/javascript" src="~/ViewJS/setting.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var isActionIncluded = true;
+                kresource.localize(isActionIncluded);
+                setting.loadProcess(@ViewBag.EntityDefID);
+            })
+        </script>
+</body>
+</html>

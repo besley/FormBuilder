@@ -1,31 +1,33 @@
-﻿# SlickMaster
+﻿# FormBuilder
 
-V1.6.0 版本说明：
-1. 增加按钮命令执行脚本保存字段；
-2. 增加文件上传组件(FineUpload开源组件)，用于页面附件上传；
-3. 增加数据网格DataGrid嵌入页面，加载动态实体表数据；
-
-
-表单定制需求比较广泛，可以用于在线调查问卷，企业业务表单，CRM联系人表单等各种场景。SlickMaster 是一款Bootstrap框架的表单定制器，功能主要描述如下：
-
-1. Bootstrap框架支持；
-2. 自由拖动控件，生成表单模板，生成表单HTML内容;
-3. 存储表单定义和表单字段列表；
-
-此外在高级版本中，主要支持如下功能：
-
-1. 表单数据的动态存储；
-2. 表单可以使用工作流引擎中间件完成表单审批功能。
-
-EMail: william.ligong@yahoo.com
-
-QQ(Author): 47743901
-
-在线DEMO:
-
-http://demo.slickflow.com/smd2/
+V2.2.0 version description:
+1. Add button command execution script save field;
+2. Add a file upload component (FineUpload open-source component) for uploading page attachments;
+3. Add a Data Grid GridGrid embedding page to load dynamic entity table data;
 
 
-捐赠方式：
+The demand for form customization is quite extensive and can be used in various scenarios such as online survey questionnaires, enterprise business forms, CRM contact forms, etc. FormBuilder is a form customizer for the Bootstrap framework, with the following main functions:
 
-http://www.slickflow.com/donate/index
+1. Bootstrap framework support;
+2. Drag the control freely to generate a form template and HTML content for the form;
+3. Store form definitions and form field lists;
+
+In addition, in the advanced version, the following features are mainly supported:
+
+1. Dynamic storage of form data;
+2. Forms can be approved using slickflow workflow engine middleware. 
+
+EMail: sales@ruochisoft.com 
+
+QQ Group: 233248778 
+QQ(Author): 47743901 
+WeChat: besley2008 
+
+On Line DEMO: 
+
+http://demo.slickflow.com/smd2/ 
+
+
+Donation： 
+
+http://www.slickflow.com/donate/index 

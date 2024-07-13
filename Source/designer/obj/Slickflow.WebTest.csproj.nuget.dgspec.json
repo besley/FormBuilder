@@ -1,0 +1,101 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickMaster.Designer\\Slickflow.WebTest.csproj": {}
+  },
+  "projects": {
+    "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickMaster.Designer\\Slickflow.WebTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickMaster.Designer\\Slickflow.WebTest.csproj",
+        "projectName": "Slickflow.WebTest",
+        "projectPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickMaster.Designer\\Slickflow.WebTest.csproj",
+        "packagesPath": "C:\\Users\\lg\\.nuget\\packages\\",
+        "outputPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickMaster.Designer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Data\\Slickflow.Data.csproj": {
+                "projectPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Data\\Slickflow.Data.csproj"
+              },
+              "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Engine\\Slickflow.Engine.csproj": {
+                "projectPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Engine\\Slickflow.Engine.csproj"
+              },
+              "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Graph\\Slickflow.Graph.csproj": {
+                "projectPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Graph\\Slickflow.Graph.csproj"
+              },
+              "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Module.Localize\\Slickflow.Module.Localize.csproj": {
+                "projectPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\Slickflow.Module.Localize\\Slickflow.Module.Localize.csproj"
+              },
+              "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickOne.WebUtility\\SlickOne.WebUtility.csproj": {
+                "projectPath": "D:\\Cloud365\\GitHomeCore\\SlickMasterCore\\Source\\SlickOne.WebUtility\\SlickOne.WebUtility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "noWarn": [
+                "NU1605"
+              ]
+            },
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "noWarn": [
+                "NU1605"
+              ]
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

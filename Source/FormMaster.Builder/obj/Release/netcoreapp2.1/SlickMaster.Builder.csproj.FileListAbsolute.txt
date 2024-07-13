@@ -1,0 +1,17 @@
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\SlickMaster.Builder.deps.json
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\SlickMaster.Builder.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\SlickMaster.Builder.pdb
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\Dapper.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\Slickflow.Engine.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\SlickOne.Data.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\Slickflow.Module.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\Slickflow.Data.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\Slickflow.Module.Resource.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.csprojAssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.csproj.CopyComplete
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.dll
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\obj\Release\netcoreapp2.1\SlickMaster.Builder.pdb
+D:\Cloud365\GitHomeCore\SlickMasterCore\Source\SlickMaster.Builder\bin\Release\netcoreapp2.1\SlickOne.WebUtility.dll

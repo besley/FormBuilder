@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>List</title>
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal-body">
+        <div class="modal-body">
+            <div id="myAttributeGrid" class="ag-bootstrap" style="width:100%;height:200px;float:left;"></div>
+            <img src="~/Content/images/ajax-loader.gif" id="loading-indicator" style="position: fixed; left: 40%; top: 40%; display: none;" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn lang" as="close" data-dismiss="modal" aria-hidden="true"></button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/ViewJS/attributelist.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            kresource.localize();
+            attributelist.load();
+        })
+    </script>
+
+</body>
+</html>

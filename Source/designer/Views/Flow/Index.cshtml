@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/bootstrap/bootstrap-dialog.min.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/bootstrap/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-datepicker.min.css" />
+    <link href="~/Content/jquery-ui/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/msgBoxLight.css" rel="stylesheet" />
+    <link href="~/Content/master.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <link href="~/Content/ztree/metro.css" rel="stylesheet" />
+    <!-- ag-grid-->
+    <link rel="stylesheet" href="~/Content/ag-grid/ag-grid.css" />
+    <link rel="stylesheet" href="~/Content/ag-grid/theme-bootstrap.css" />
+
+    @*<title class="lang" as="formintegratedwithprocess"></title>*@
+    <title>FormMaster Form</title>
+    <style id="content-styles">
+        /* Styles that are also copied for Preview */
+        body {
+            margin: 10px 0 0 10px;
+        }
+
+        .control-label {
+            display: inline-block !important;
+            text-align: right;
+            vertical-align: baseline;
+            padding-right: 10px;
+            padding-top: 5px;
+        }
+
+        .droppedField {
+            padding-left: 5px;
+        }
+
+            .droppedField > input, select, button, .checkboxgroup, .selectmultiplelist, .radiogroup {
+                margin-top: 10px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+
+        .action-bar .droppedField {
+            float: left;
+            padding-left: 5px;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            background-color: #000;
+        }
+
+        .progress-bar.animate {
+            width: 100%;
+        }
+
+        .form-control {
+            display: inline;
+        }
+
+        .form-group.required .mandatory-field:after {
+            content: "*";
+            color: red;
+        }
+
+        .mandatory-field {
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="row tblTop">
+                    <span class="lang" as="forminstance"></span>
+                </div>
+                <div class="row tblTop">
+                    <div class="row">
+                        <a href="#" class="btn btn-danger" onclick="kflowmain.deleteEntityInfo();"><span class="glyphicon glyphicon-share lang" as="deleteinstance"></span></a>
+                        <a href="#" class="btn btn-success" onclick="kflowmain.showKGraph();"><span class="glyphicon glyphicon-share lang" as="processdiagram"></span></a>
+                        <a href="#" class="btn btn-warning" onclick="kflowmain.refreshEntityInfo();"><span class="glyphicon glyphicon-share lang" as="refresh"></span></a>
+                    </div>
+                    <div class="row tblTop">
+                        <div id="myEntityInfoAttrValueGrid" class="ag-bootstrap" style="width:360px;height:300px;float:left;"></div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="row tblBorder">
+                        <span class="lang" as="tasklist"></span>
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#todolist" role="tab" data-toggle="tab" id="tabToDo" class="lang" as="tasktodolist"></a></li>
+                        <li><a href="#donelist" role="tab" data-toggle="tab" id="tabDone" class="lang" as="taskdonelist"></a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="todolist">
+                            <div class="row">
+                                <div id="myToDoTaskGrid" class="ag-bootstrap" style="width:100%;height:160px;float:left;"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="donelist">
+                            <div class="row">
+                                <div id="myDoneTaskGrid" class="ag-bootstrap" style="width:100%;height:160px;float:left;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row" style="margin-left:20px;">
+                    <div class="row tblBorder">
+                        <span class="lang" as="formcontent"></span>
+                    </div>
+                    <div class="row tblBorder">
+                        <a href="#" class="btn btn-info" onclick="kflowmain.startProcess();"><span class="glyphicon glyphicon-share lang" as="startprocess"></span></a>
+                        <a href="#" class="btn btn-success" onclick="kflowmain.runProcess();"><span class="glyphicon glyphicon-share lang" as="runprocess"></span></a>
+                        <a href="#" class="btn btn-info" onclick="kflowmain.saveFormData();"><span class="glyphicon glyphicon-file lang" as="save"></span></a>
+                        <a href="#" class="btn btn-warning" onclick="window.close();"><span class="glyphicon glyphicon-export lang" as="return"></span></a>
+                    </div>
+                    <div class="row" style="height:700px;">
+                        <div class="span10" style="font-weight: bold; text-align:center; font-size: large" id="dynamicFormTitle"></div>
+                        <div class="span10" id="dynamicFormContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="~/Content/images/ajax-loader.gif" id="loading-indicator" style="position: fixed; left: 40%; top: 40%; display: none;" />
+        </div>
+    </div>
+
+    <div id="modelNextStepForm" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel" class="lang" as="nextstepusers"></h3>
+                </div>
+                <div class="modal-body">
+
+                    <ul id="nextStepTree" class="ztree" style="overflow:auto;height:300px;"></ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary lang" as="sure" onclick="nextActivityTree.sure();"></button>
+                    <button class="btn lang" as="cancel" data-dismiss="modal" aria-hidden="true"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modelPrevStepForm" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel" class="lang" as="nextstepusers"></h3>
+                </div>
+                <div class="modal-body">
+                    <ul id="prevStepTree" class="ztree" style="overflow:auto;height:300px;"></ul>
+                    <div id="divSendBackOptions" class="row tblBorder">
+                        <span class="lang" as="sendbackoptions"></span><input id="chkCancelBrothersNode" type="checkbox" style="width:20px;" />
+                        <span class="lang" as="cancelotherbranchestask"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary lang" as="sure" onclick="prevactivitytree.sure();"></button>
+                    <button class="btn lang" as="cancel" data-dismiss="modal" aria-hidden="true"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myDialog" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Progress Bar-->
+    <div class="modal js-loading-bar">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-transitiongoal="75"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-ui-1.10.3.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.event.drag-2.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.msgBox.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootbox.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-dialog.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-progressbar.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/handlebars.js"></script>
+    <script type="text/javascript" src="~/Scripts/jshelper.js"></script>
+    <script type="text/javascript" src="~/Scripts/localhelper.js"></script>
+
+    <!-- ag-grid-->
+    <script type="text/javascript" src="~/Scripts/ag-grid/ag-grid.min.js"></script>
+
+    <!-- ztree -->
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.ztree.all-3.5.min.js"></script>
+
+    <script type="text/javascript" src="~/ViewJS/kcommon.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kmsgbox.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kresource.js"></script>
+    <script type="text/javascript" src="~/ViewJS/eavmanager.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kbuilder.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kflowmain.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kentityinfo.js"></script>
+    <script type="text/javascript" src="~/ViewJS/processlist.js"></script>
+    <script type="text/javascript" src="~/ViewJS/kgraph2.min.js"></script>
+    <script type="text/javascript" src="~/ViewJS/nextactivitytree.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            var isActionIncluded = true;
+            kresource.localize(isActionIncluded);
+
+            var entityDefID = @ViewBag.EntityDefID;
+            kflowmain.ready(entityDefID);
+        })
+    </script>
+
+</body>
+</html>

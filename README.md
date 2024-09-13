@@ -4,8 +4,9 @@ V2.2.0 version description:
 
 FormBuilder is an open source project which integrated with the FormJS framework and the slickflow engine. 
 
-1. database operation;
-2. workflow engine integrated;
+1. Database  operation dapper supported(MSSQL is default);
+2. Slickflow workflow engine integrated;
+3. Form create/view/approval suppoerted;
 
 EMail: sales@ruochisoft.com 
 

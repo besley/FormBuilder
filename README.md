@@ -1,7 +1,8 @@
 ﻿# FormBuilder
 
 V2.2.0 version description:
-FormBuilder is an open source project which integrated with the FormJS framework and the slickflwo engine. 
+
+FormBuilder is an open source project which integrated with the FormJS framework and the slickflow engine. 
 
 1. database operation;
 2. workflow engine integrated;

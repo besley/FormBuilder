@@ -1,0 +1,123 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SlickMaster.Builder/1.0.0": {
+        "dependencies": {
+          "Microsoft.International.Converters.PinYinConverter": "1.0.0",
+          "Dapper": "1.0.0.0",
+          "Slickflow.Engine": "1.7.6.2",
+          "SlickOne.Data": "1.6.0.0",
+          "SlickOne.WebUtility": "1.0.0.0"
+        },
+        "runtime": {
+          "SlickMaster.Builder.dll": {}
+        }
+      },
+      "Microsoft.International.Converters.PinYinConverter/1.0.0": {
+        "runtime": {
+          "lib/ChnCharInfo.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Dapper/1.0.0.0": {
+        "runtime": {
+          "Dapper.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Slickflow.Engine/1.7.6.2": {
+        "runtime": {
+          "Slickflow.Engine.dll": {
+            "assemblyVersion": "1.7.6.2",
+            "fileVersion": "1.7.6.2"
+          }
+        }
+      },
+      "SlickOne.Data/1.6.0.0": {
+        "runtime": {
+          "SlickOne.Data.dll": {
+            "assemblyVersion": "1.6.0.0",
+            "fileVersion": "1.6.0.0"
+          }
+        }
+      },
+      "SlickOne.WebUtility/1.0.0.0": {
+        "runtime": {
+          "SlickOne.WebUtility.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Slickflow.Module/1.0.0.0": {
+        "runtime": {
+          "Slickflow.Module.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Slickflow.Module.Resource/1.0.0.0": {
+        "runtime": {
+          "Slickflow.Module.Resource.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SlickMaster.Builder/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.International.Converters.PinYinConverter/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hEs/VPwGFeVNLf2Wc6k2bMYF71zE6x+lW4MfebRAjkVbAbaa4DbEmdFRfSBymvGLtdsCUvXo2aa/yFKYSCYmEQ==",
+      "path": "microsoft.international.converters.pinyinconverter/1.0.0",
+      "hashPath": "microsoft.international.converters.pinyinconverter.1.0.0.nupkg.sha512"
+    },
+    "Dapper/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Slickflow.Engine/1.7.6.2": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SlickOne.Data/1.6.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SlickOne.WebUtility/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Slickflow.Module/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Slickflow.Module.Resource/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

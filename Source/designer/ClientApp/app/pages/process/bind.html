@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap5-dialog/dist/css/bootstrap-dialog.css" />
+    <link rel="stylesheet" href="../../vendor/ag-grid-community/dist/styles/ag-grid.css" />
+    <link rel="stylesheet" href="../../vendor/ag-grid-community/dist/styles/ag-theme-bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/ag-grid-community/dist/styles/ag-theme-alpine-dark.css" />
+
+    <title>Process Binding</title>
+
+    <style type="text/css">
+        .ag-header-cell {
+            background-color: #49afcd
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="row tblTop">
+                <div class="row" style="display:block;">
+                    <select class="form-control" id="ddlProcesses" style="width:320px;display:inline-block;">
+                        <option class="lang" as="processlist" value="0"></option>
+                    </select>
+                    <a href="#" class="btn btn-info" id="btnBindProcess"><span class="glyphicon glyphicon-ok lang" as="bindbutton"></span></a>
+                    <a href="#" class="btn btn-warning" id="btnUnbindProcess"><span class="glyphicon glyphicon-log-out lang" as="unbindbutton"></span></a>
+                    <a href="#" class="btn btn-success" id="btnRefreshProcess"><span class="glyphicon glyphicon-log-out lang" as="refreshbutton"></span></a>
+                    <div id="myProcessGrid" class="ag-theme-bootstrap" style="width:100%;height:300px;float:left;margin-top:10px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import kconfig from '../../config/kconfig.js'
+        window.kconfig = kconfig;
+    </script>
+
+    <script type="text/javascript" src="../../index.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            kresource.localize("../../");
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const formID = urlParams.get('FormID');
+            kprocessbind.loadProcess(formID);
+        });
+    </script>
+</body>
+</html>

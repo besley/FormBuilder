@@ -1,0 +1,12 @@
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\bin\Debug\net5.0\SlickMaster.Localize.deps.json
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\bin\Debug\net5.0\SlickMaster.Localize.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\bin\Debug\net5.0\ref\SlickMaster.Localize.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\bin\Debug\net5.0\SlickMaster.Localize.pdb
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.csprojAssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\ref\SlickMaster.Localize.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.Localize\obj\Debug\net5.0\SlickMaster.Localize.pdb

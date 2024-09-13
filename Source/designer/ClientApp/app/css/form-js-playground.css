@@ -1,0 +1,177 @@
+﻿.fjs-pgl-root {
+    --color-light-gray: #eee;
+    --color-default-gray: #aaa;
+    --color-dark-gray: #999;
+    --font-family: "IBM Plex Sans", sans-serif;
+}
+
+.fjs-pgl-root {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: var(--font-family);
+}
+
+.fjs-pgl-main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 70% 30%;
+}
+
+/**
+ * Section
+ */
+.fjs-pgl-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+    .fjs-pgl-section:nth-child(1),
+    .fjs-pgl-section:nth-child(2) {
+        border-bottom: double 3px var(--color-dark-gray);
+    }
+
+    .fjs-pgl-section:nth-child(1),
+    .fjs-pgl-section:nth-child(3) {
+        border-right: double 3px var(--color-dark-gray);
+    }
+
+    .fjs-pgl-section .header {
+        background: var(--color-light-gray);
+        font-size: 1rem;
+        margin: 0;
+        line-height: 2em;
+        padding: 0 0.5em;
+        border-bottom: solid 1px var(--color-default-gray);
+    }
+
+    .fjs-pgl-section .header-items {
+        float: right;
+    }
+
+    .fjs-pgl-section .body {
+        flex: 1;
+        overflow: hidden;
+    }
+
+.fjs-pgl-modal {
+    z-index: 5;
+}
+
+    .fjs-pgl-modal .fjs-pgl-modal-backdrop {
+        background: rgba(0 0 0 / 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+.fjs-pgl-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    width: 500px;
+    overflow-y: auto;
+    max-height: 80%;
+    transform: translate(-40%, -50%);
+    z-index: 5;
+    font-size: 14px;
+    padding: 20px;
+    background: white;
+}
+
+    .fjs-pgl-modal-content textarea {
+        width: 100%;
+        height: 300px;
+        overflow: auto;
+    }
+
+.fjs-pgl-modal-footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.fjs-pgl-form-container {
+    height: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fjs-pgl-text-container {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+}
+
+    .fjs-pgl-text-container > .cm-editor {
+        font-size: 0.9em;
+        height: 100%;
+    }
+
+.fjs-pgl-form-container > .fjs-container {
+    overflow: auto;
+}
+
+.fjs-pgl-button {
+    color: var(--color-text);
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: var(--color-lighter-gray);
+    font-family: var(--font-family);
+}
+
+.fjs-pgl-button-default {
+    padding: 7px 10px;
+}
+
+.fjs-pgl-button:hover {
+    background-color: var(--color-light-gray);
+}
+
+.fjs-pgl-button + .fjs-pgl-button {
+    margin-left: 1em;
+}
+
+.fjs-pgl-parent {
+    width: 100%;
+    height: 100%;
+}
+/**
+ * file-drop.css
+ */
+.drop-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+}
+
+    .drop-overlay .box {
+        text-align: center;
+        border: dashed 4px #ccc;
+        height: 100%;
+        width: 100%;
+        display: table;
+    }
+
+    .drop-overlay .label {
+        font-size: 26px;
+        color: #888;
+        margin: auto;
+        display: table-cell;
+        vertical-align: middle;
+    }

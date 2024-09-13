@@ -1,0 +1,12 @@
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\bin\Debug\net5.0\SlickMaster.ToolKit.deps.json
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\bin\Debug\net5.0\SlickMaster.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\bin\Debug\net5.0\ref\SlickMaster.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\bin\Debug\net5.0\SlickMaster.ToolKit.pdb
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.csprojAssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\ref\SlickMaster.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickMasterQua\Source\SlickMaster.ToolKit\obj\Debug\net5.0\SlickMaster.ToolKit.pdb

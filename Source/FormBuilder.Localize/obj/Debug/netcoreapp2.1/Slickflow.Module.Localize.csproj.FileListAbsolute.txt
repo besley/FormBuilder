@@ -1,0 +1,9 @@
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\bin\Debug\netcoreapp2.1\Slickflow.Module.Localize.deps.json
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\bin\Debug\netcoreapp2.1\Slickflow.Module.Localize.dll
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\bin\Debug\netcoreapp2.1\Slickflow.Module.Localize.pdb
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\obj\Debug\netcoreapp2.1\Slickflow.Module.Localize.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\obj\Debug\netcoreapp2.1\Slickflow.Module.Localize.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\obj\Debug\netcoreapp2.1\Slickflow.Module.Localize.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\obj\Debug\netcoreapp2.1\Slickflow.Module.Localize.dll
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\obj\Debug\netcoreapp2.1\Slickflow.Module.Localize.pdb
+D:\Cloud365\GitHomeCore\SlickflowCore\Dapper\Slickflow\Source\Slickflow.Module.Localize\obj\Debug\netcoreapp2.1\Slickflow.Module.Localize.csprojAssemblyReference.cache

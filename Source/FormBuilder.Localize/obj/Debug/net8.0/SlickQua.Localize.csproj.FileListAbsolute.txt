@@ -1,0 +1,12 @@
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\bin\Debug\net8.0\SlickQua.Localize.deps.json
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\bin\Debug\net8.0\SlickQua.Localize.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\bin\Debug\net8.0\SlickQua.Localize.pdb
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.csproj.AssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\refint\SlickQua.Localize.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\SlickQua.Localize.pdb
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Localize\obj\Debug\net8.0\ref\SlickQua.Localize.dll

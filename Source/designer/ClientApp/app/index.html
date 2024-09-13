@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Builder</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="vendor/bootstrap5-dialog/dist/css/bootstrap-dialog.css" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/form-js.css" />
+    <link rel="stylesheet" href="css/form-js-editor.css" />
+
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+    <body>
+        <div class="row" style="margin-left:160px;">
+            <div style="float:left;">
+                <a href="#" class="btn btn-info" id="btnCreateForm"><span class="bi bi-file-earmark lang" as="new"> </span> </a>
+                <a href="#" class="btn btn-info" id="btnOpenForm"><span class="bi bi-folder lang" as="open"> </span></a>
+                <a href="#" class="btn btn-info" id="btnSaveForm"><span class="bi bi-check-lg lang" as="save"> </span></a>
+            </div>
+            <div style="float:left;margin-left: 5px;">
+                <a href="#" class="btn btn-info" id="btnPreview" onclick="kmain.previewForm();"><span class="bi bi-search lang" as="preview"> </span> </a>
+            </div>
+            <div class="dropdown" style="float:left;margin-left: 5px;">
+                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLinkProcess" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="bi bi-shuffle lang" as="process"> </span><span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkProcess">
+                    <a class="dropdown-item" href="#"><span class="lang" as="bindprocess" onclick="kmain.bindProcess();"></span></a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;margin-left: 5px;">
+                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLinkOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="bi bi-grid lang" as="options"> </span><span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkOptions">
+                    <a class="dropdown-item" href="#"><span class="lang" as="en" onclick="kmain.changeLang('en');"></span></a>
+                    <li class="divider">&nbsp</li>
+                    <a class="dropdown-item" href="#"><span class="lang" as="zh" onclick="kmain.changeLang('zh');"></span></a>
+                </div>
+            </div>
+        </div>
+
+        <!--Include bootstrap progress bar in div. -->
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-success"
+                 style="width: 0%">
+            </div>
+        </div>
+
+        <div class="content" id="js-drop-zone">
+
+            <div class="message intro">
+                <div class="note">
+                    <a id="js-open-form-list" href role="button"><span class="lang" as="choosefromformlist"></span></a> <span class="lang" as="oryoucan"></span>
+                    <a id="js-create-form" href><span class="lang" as="createnewform"></span></a> <span class="lang" as="togetstarted"></span>
+                </div>
+            </div>
+
+            <div class="message error">
+                <div class="note">
+                    <p>Ooops, we could not display the FORM.</p>
+
+                    <div class="details">
+                        <span>cause of the problem</span>
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div id="form-editor" class="canvas"></div>
+        </div>
+
+        <script type="module">
+            import kconfig from './config/kconfig.js'
+            window.kconfig = kconfig;
+        </script>
+
+        <script type="text/javascript" src="index.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                kresource.localize();
+            });
+        </script>
+
+    </body>
+</html>

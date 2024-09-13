@@ -1,0 +1,12 @@
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\bin\Release\net8.0\FormBuilder.ToolKit.deps.json
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\bin\Release\net8.0\FormBuilder.ToolKit.dll
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\bin\Release\net8.0\FormBuilder.ToolKit.pdb
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.csproj.AssemblyReference.cache
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.dll
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\refint\FormBuilder.ToolKit.dll
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\FormBuilder.ToolKit.pdb
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.ToolKit\obj\Release\net8.0\ref\FormBuilder.ToolKit.dll

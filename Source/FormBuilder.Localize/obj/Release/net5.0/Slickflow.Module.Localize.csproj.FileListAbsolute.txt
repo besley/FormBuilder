@@ -1,0 +1,12 @@
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\bin\Release\net5.0\Slickflow.Module.Localize.deps.json
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\bin\Release\net5.0\Slickflow.Module.Localize.dll
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\bin\Release\net5.0\ref\Slickflow.Module.Localize.dll
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\bin\Release\net5.0\Slickflow.Module.Localize.pdb
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.csprojAssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.dll
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\ref\Slickflow.Module.Localize.dll
+D:\Cloud365\GitHomeCore\SlickflowCore\Source\Slickflow.Module.Localize\obj\Release\net5.0\Slickflow.Module.Localize.pdb

@@ -1,0 +1,24 @@
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\SlickQua.ToolKit.deps.json
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\SlickQua.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\ref\SlickQua.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\SlickQua.ToolKit.pdb
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.csprojAssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\ref\SlickQua.ToolKit.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.pdb
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\SlickQua.ToolKit.deps.json
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\SlickQua.ToolKit.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\bin\Debug\net5.0\SlickQua.ToolKit.pdb
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.csproj.AssemblyReference.cache
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.AssemblyInfoInputs.cache
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.AssemblyInfo.cs
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.csproj.CoreCompileInputs.cache
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\refint\SlickQua.ToolKit.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\SlickQua.ToolKit.pdb
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.ToolKit\obj\Debug\net5.0\ref\SlickQua.ToolKit.dll

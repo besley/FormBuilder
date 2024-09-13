@@ -1,0 +1,30 @@
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\SlickQua.Builder.deps.json
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\SlickQua.Builder.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\SlickQua.Builder.pdb
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\Dapper.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\Slickflow.Data.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\Slickflow.Engine.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\SlickOne.WebUtility.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\SlickQua.Localize.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\Slickflow.Module.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\Slickflow.Module.Localize.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\Slickflow.Module.Resource.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\bin\Debug\net6.0\SlickQua.Localize.pdb
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.csproj.AssemblyReference.cache
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.AssemblyInfoInputs.cache
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.AssemblyInfo.cs
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.csproj.CoreCompileInputs.cache
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.csproj.CopyComplete
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\refint\SlickQua.Builder.dll
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.pdb
+D:\Cloud365\20240201\Slickflow-Package-Ultimate-2024(ETG)\Source Code\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\ref\SlickQua.Builder.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.csproj.AssemblyReference.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\refint\SlickQua.Builder.dll
+D:\Cloud365\GitHomeCore\SlickQua\Source\SlickQua.Builder\obj\Debug\net6.0\SlickQua.Builder.pdb

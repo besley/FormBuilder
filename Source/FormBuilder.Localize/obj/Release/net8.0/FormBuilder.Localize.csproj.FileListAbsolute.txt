@@ -1,0 +1,12 @@
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\bin\Release\net8.0\FormBuilder.Localize.deps.json
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\bin\Release\net8.0\FormBuilder.Localize.dll
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\bin\Release\net8.0\FormBuilder.Localize.pdb
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.csproj.AssemblyReference.cache
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.AssemblyInfoInputs.cache
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.AssemblyInfo.cs
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.csproj.CoreCompileInputs.cache
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.dll
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\refint\FormBuilder.Localize.dll
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\FormBuilder.Localize.pdb
+D:\Cloud365\GitHomeCore\FormBuilder\Source\FormBuilder.Localize\obj\Release\net8.0\ref\FormBuilder.Localize.dll

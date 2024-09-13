@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PinYinConverterCore" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FormBuilder.Localize\FormBuilder.Localize.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\DLL\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Slickflow.Data">
+      <HintPath>..\DLL\Slickflow.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Slickflow.Engine">
+      <HintPath>..\DLL\Slickflow.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="SlickOne.WebUtility">
+      <HintPath>..\DLL\SlickOne.WebUtility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

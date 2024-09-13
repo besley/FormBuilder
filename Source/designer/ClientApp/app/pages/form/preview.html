@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      required viewer styles
+    -->
+    <link rel="stylesheet" href="../../vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap5-dialog/dist/css/bootstrap-dialog.css" />
+
+    <link rel="stylesheet" href="../../css/fonts.css" />
+    <link rel="stylesheet" href="../../css/form-js.css" />
+    <link rel="stylesheet" href="../../css/form-js-editor.css" />
+
+    <link rel="stylesheet" href="../../css/app.css" />
+    <style>
+        #form {
+            max-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form"></div>
+    <!--
+      required viewer script
+    -->
+    <script src="../../script/form-viewer.js"></script>
+    <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        const label = urlParams.get('FormSchemaID');
+        var schemaContent = sessionStorage.getItem(label);
+        var schema = JSON.parse(schemaContent);
+
+        if (schema) {
+            const container = document.querySelector('#form');
+
+            FormViewer.createForm({
+                container,
+                schema
+            });
+        }
+    </script>
+</body>
+</html>

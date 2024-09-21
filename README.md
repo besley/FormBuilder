@@ -40,6 +40,16 @@ http://localhost:5000
 ![FormBuilder Home Page](https://github.com/besley/besley.github.io/blob/master/Images/formbuilder/formbuilder-homepage.png)
 
 
+Quick Test Tutorial for Beginners:
+
+1). In the form builder designer page, the user can drag input elements to the right panel, and save it to a new form template.
+
+![FormBuilder Designer](https://github.com/besley/besley.github.io/blob/master/Gif/formbuilder-askforleave-demo.gif)
+
+2). After a new form templated created, this form can be binded to a process, and make a simulation process running test.
+
+![FormBuilder Process](https://github.com/besley/besley.github.io/blob/master/Gif/formbuilder-askforleave-process-demo.gif)
+
 EMail: sales@ruochisoft.com 
 
 QQ Group: 233248778 
